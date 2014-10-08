@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"no tests yet, just trust me\" && exit 0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rackt/react-autocomplete.git"
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {
