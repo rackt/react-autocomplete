@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "",
   "main": "lib/main.js",
+  "style": "lib/styles.css",
   "scripts": {
     "test": "echo \"no tests yet, just trust me\" && exit 0"
   },
@@ -16,6 +17,7 @@
     "webpack": "^1.3.0-beta5",
     "rf-release": "^0.1.2"
   },
+  "browserify": {"transform": ["reactify"]},
   "tags": [
     "react",
     "autocomplete",
