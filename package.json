@@ -21,5 +21,8 @@
     "autocomplete",
     "combobox",
     "a11y"
-  ]
+  ],
+  "browserify": {
+    "transform": ["reactify"]
+  }
 }
