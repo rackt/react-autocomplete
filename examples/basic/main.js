@@ -24,7 +24,7 @@ var App = React.createClass({
     // make sure to clear out the current selection
     this.setState({selectedStateId: null}, function() {
       // and then do our client-side filtering, need to it after setState has happened
-      // so that the value doesn't get rerendered to hte old selectedStateId
+      // so that the value doesn't get rerendered to the old selectedStateId
       // (this might be bad implementation at this point, still exploring a better
       // way to handle this)
       this.filterStates(userInput);
@@ -76,7 +76,7 @@ var App = React.createClass({
     return (
       <div>
         <h1>React Combobox</h1>
-        <p><a href="https://github.com/rpflorence/react-combobox/blob/master/example/main.js">Demo Source</a></p>
+        <p><a href="https://github.com/rackt/react-autocomplete/blob/master/examples/basic/main.js">Demo Source</a></p>
         <p>Selected State: {this.state.selectedStateId}</p>
         <Combobox
           onInput={this.handleInput}
