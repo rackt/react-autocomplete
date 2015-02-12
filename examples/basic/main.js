@@ -76,7 +76,7 @@ var App = React.createClass({
     return (
       <div>
         <h1>React Combobox</h1>
-        <p><a href="https://github.com/rpflorence/react-combobox/blob/master/example/main.js">Demo Source</a></p>
+        <p><a href="https://github.com/rackt/react-autocomplete/blob/master/examples/basic/main.js">Demo Source</a></p>
         <p>Selected State: {this.state.selectedStateId}</p>
         <Combobox
           onInput={this.handleInput}
