@@ -16,7 +16,7 @@
     "webpack": "^1.3.0-beta5",
     "rf-release": "^0.1.2"
   },
-  browserify": {
+  "browserify": {
     "transform": ["reactify"]
   },
   "tags": [
