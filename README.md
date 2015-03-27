@@ -1,26 +1,22 @@
-react-autocomplete (combobox)
-=============================
+# react-autocomplete
 
-[WAI-ARIA][wai-aria] accessible [React][react] autocomplete component (combobox).
+[React][react] autocomplete component (combobox).
 
-Installation
-------------
+## Installation
 
-`npm install react-autocomplete`
+`npm install hellojwilde/react-autocomplete`
 
-WIP
----
+## WIP
 
-This is not production ready, but I welcome use-cases opened in the
-issues :)
+This is not production ready, but I welcome use-cases opened in the issues :)
 
-Demo
-----
+## Demo
 
-http://rackt.github.io/react-autocomplete/example/
+http://jwilde.me/react-autocomplete/example/
 
-Usage
------
+## Example
+
+Check out the examples directory for a more complete implementation example.
 
 ```js
 var Autocomplete = require('react-autocomplete');
@@ -71,9 +67,6 @@ var comboboxinItUp = (
   </Combobox>
 );
 ```
-
-This is not realistic code, check out the examples directory for a real
-implementation.
 
   [wai-aria]:http://www.w3.org/TR/wai-aria/roles#combobox
   [react]:http://facebook.github.io/react/
