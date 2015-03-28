@@ -1,7 +1,6 @@
 var React = require('react');
-var Autocomplete = require('../../lib/index');
-var Combobox = Autocomplete.Combobox;
-var ComboboxOption = Autocomplete.Option;
+var {Combobox, ComboboxOption} = require('../../lib/index');
+
 var states = require('../states');
 
 var App = React.createClass({
