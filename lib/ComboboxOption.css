@@ -10,7 +10,7 @@
   cursor: default;
 }
 
-.rf-combobox-selected:before {
+.rf-combobox-option--isSelected:before {
   content: '✓';
   position: absolute;
   left: 4px;
