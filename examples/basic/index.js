@@ -1,7 +1,5 @@
-/** @jsx React.DOM */
 var React = require('react');
-//var Autocomplete = require('react-autocomplete');
-var Autocomplete = require('../../lib/main');
+var Autocomplete = require('../../lib/index');
 var Combobox = Autocomplete.Combobox;
 var ComboboxOption = Autocomplete.Option;
 var states = require('../states');
@@ -91,5 +89,5 @@ var App = React.createClass({
   }
 });
 
-React.renderComponent(<App/>, document.body);
+React.render(<App/>, document.body);
 

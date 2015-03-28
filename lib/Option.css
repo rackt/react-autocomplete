@@ -1,0 +1,17 @@
+.rf-combobox-option:focus {
+  outline: 0;
+  color: white;
+  background: hsl(200, 50%, 50%);
+}
+
+.rf-combobox-option {
+  display: block;
+  padding: 2px 16px;
+  cursor: default;
+}
+
+.rf-combobox-selected:before {
+  content: '✓';
+  position: absolute;
+  left: 4px;
+}
