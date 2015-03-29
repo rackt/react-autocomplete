@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"no tests yet, just trust me\" && exit 0"
+    "test": "echo \"no tests yet, just trust me\" && exit 0",
+    "prepublish": "webpack"
   },
   "author": "",
   "license": "MIT",
