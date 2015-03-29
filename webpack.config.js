@@ -1,34 +1,28 @@
-var path = require('path');
-var fs = require('fs');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-function buildEntries() {
-  return fs.readdirSync('examples').reduce(function(entries, dir) {
-    if (dir === 'build') {
-      return entries;
-    }
-    var isDraft = dir.charAt(0) === '_';
-    if (!isDraft && fs.lstatSync(path.join('examples', dir)).isDirectory()) {
-      entries[dir] = './examples/'+dir+'/'+'main.js';
-    }
-    return entries;
-  }, {});
-}
+var path = require('path');
 
 module.exports = {
-  entry: buildEntries(),
+  entry: './src/Combobox.js',
 
   output: {
     filename: '[name].js',
-    chunkFilename: '[id].chunk.js',
-    path: path.join(__dirname, 'examples', 'build'),
-    publicPath: '../build/'
+    path: path.join(__dirname, 'lib'),
+    library: 'Combobox',
+    libraryTarget: 'commonjs2'
   },
+
+  target: 'node',
 
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'jsx-loader'}
+      {test: /\.js$/, loader: 'babel-loader?experimental=true'},
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')}
     ]
-  }
-};
+  },
 
+  plugins: [
+    new ExtractTextPlugin('styles.css')
+  ]
+};
 

@@ -1,4 +1,4 @@
-module.exports = [
+const StateData = [
   { id: "AL", name: "Alabama"},
   { id: "AK", name: "Alaska"},
   { id: "AZ", name: "Arizona"},
@@ -50,4 +50,6 @@ module.exports = [
   { id: "WI", name: "Wisconsin"},
   { id: "WY", name: "Wyoming"}
 ];
+
+module.exports = StateData;
 
