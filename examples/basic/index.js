@@ -13,8 +13,8 @@ var App = React.createClass({
     };
   },
 
-  handleComboboxChange: function(comboboxValue, callback) {
-    this.setState({comboboxValue}, callback);
+  handleComboboxChange: function(comboboxValue) {
+    this.setState({comboboxValue});
   },
 
   render: function() {
@@ -22,7 +22,7 @@ var App = React.createClass({
       <div>
         <h1>React Combobox</h1>
         <p><a href="https://github.com/hellojwilde/react-autocomplete/blob/master/examples/basic/main.js">Demo Source</a></p>
-        <p>Selected State: {this.state.comboboxValue.value}</p>
+        <p>Selected State: {this.state.comboboxValue.value.id}</p>
         <StateInput 
           value={this.state.comboboxValue} 
           onChange={this.handleComboboxChange}
