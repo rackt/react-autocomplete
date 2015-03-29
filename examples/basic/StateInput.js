@@ -27,7 +27,7 @@ var StateInput = React.createClass({
     }, 500);
   },
 
-  getLabelForValue: function(value) {
+  getLabelForOption: function(value) {
     return value.name;
   },
 
@@ -36,7 +36,8 @@ var StateInput = React.createClass({
       <Combobox 
         {...this.props}
         getOptionsForInput={this.getOptionsForInput}
-        getLabelForValue={this.getLabelForValue}
+        getLabelForOption={this.getLabelForOption}
+        getRenderedOption={this.getLabelForOption}
       />
     );
   }
