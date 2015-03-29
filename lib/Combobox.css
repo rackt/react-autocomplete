@@ -21,29 +21,7 @@
   box-sizing: border-box;
 }
 
-.rf-combobox--is-open .rf-combobox-list {
+.rf-combobox-list--is-open {
   display: block;
 }
 
-.rf-combobox-input {
-  padding-right: 20px;
-  width: 100%;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.rf-combobox-button {
-  display: inline-block;
-  position: absolute;
-  cursor: default;
-  outline: none;
-  top: 2px;
-  right: 6px;
-  font-size: 14px;
-  cursor: default;
-}
-
-.rf-combobox-button:active {
-  color: #4095BF;
-}
