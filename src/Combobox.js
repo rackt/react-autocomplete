@@ -148,15 +148,15 @@ var Combobox = React.createClass({
     this.setState({isOpen: false});
   },
 
-  handleRequestSelect: function(selectedValue, isFromOptions) {
+  handleRequestSelect: function(isFromOptions, selectedValue) {
     // XXX This is a hack to allow us to track 
     if (!isFromOptions && this.state.optionIndex != null) {
       return;
     }
 
-    this.props.onSelect(value);
+    this.props.onSelect(selectedValue);
     this.props.onChange({
-      inputValue: this.props.getLabelForOption(value),
+      inputValue: this.props.getLabelForOption(selectedValue),
       selectedValue: selectedValue
     });
 

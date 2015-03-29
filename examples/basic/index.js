@@ -7,8 +7,7 @@ var App = React.createClass({
     return {
       comboboxValue: {
         inputValue: 'California', 
-        selectionIndex: null, 
-        value: {id: 'CA', name: 'California'}
+        selectedValue: {id: 'CA', name: 'California'}
       } 
     };
   },
@@ -21,8 +20,8 @@ var App = React.createClass({
     return (
       <div>
         <h1>React Combobox</h1>
-        <p><a href="https://github.com/hellojwilde/react-autocomplete/blob/master/examples/basic/main.js">Demo Source</a></p>
-        <p>Selected State: {this.state.comboboxValue.value.id}</p>
+        <p><a href="https://github.com/hellojwilde/react-combobox/blob/master/examples/basic/index.js">Demo Source</a></p>
+        <p>Selected State: {this.state.comboboxValue.selectedValue.id}</p>
         <StateInput 
           value={this.state.comboboxValue} 
           onChange={this.handleComboboxChange}

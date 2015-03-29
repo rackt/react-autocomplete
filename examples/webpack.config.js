@@ -12,8 +12,6 @@ function getEntrypoints() {
     }, {});
 }
 
-console.log(getEntrypoints());
-
 module.exports = {
   entry: getEntrypoints(),
 
