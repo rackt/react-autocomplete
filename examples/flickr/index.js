@@ -1,5 +1,5 @@
 var React = require('react');
-var {Combobox, ComboboxOption} = require('../../lib/index');
+var Combobox = require('../../lib/Combobox');
 
 var App = React.createClass({
 

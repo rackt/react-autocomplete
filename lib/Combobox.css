@@ -3,6 +3,21 @@
   position: relative;
 }
 
+.rf-combobox-button {
+  display: inline-block;
+  position: absolute;
+  cursor: default;
+  outline: none;
+  top: 2px;
+  right: 6px;
+  font-size: 14px;
+  cursor: default;
+}
+
+.rf-combobox-button:active {
+  color: #4095BF;
+}
+
 .rf-combobox-list {
   display: none;
   position: absolute;

@@ -1,6 +1,6 @@
+var Combobox = require('../../lib/Combobox');
 var React = require('react');
 var StateData = require('./StateData');
-var {Combobox} = require('../../lib/index');
 
 var StateInput = React.createClass({
 
