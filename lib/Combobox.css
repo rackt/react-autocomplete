@@ -1,9 +1,9 @@
-.rf-combobox {
+.Combobox {
   display: inline-block;
   position: relative;
 }
 
-.rf-combobox-button {
+.Combobox-button {
   display: inline-block;
   position: absolute;
   cursor: default;
@@ -14,11 +14,11 @@
   cursor: default;
 }
 
-.rf-combobox-button:active {
+.Combobox-button:active {
   color: #4095BF;
 }
 
-.rf-combobox-list {
+.Combobox-popup {
   display: none;
   position: absolute;
   z-index: 1;
@@ -36,7 +36,7 @@
   box-sizing: border-box;
 }
 
-.rf-combobox-list--is-open {
+.Combobox-popup--is-open {
   display: block;
 }
 
