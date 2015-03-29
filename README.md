@@ -1,73 +1,65 @@
-# react-autocomplete
+# react-combobox
 
-[React][react] autocomplete component (combobox).
+A flexible autocompleting combobox for React. 
+
+Intially derived from Ryan Florence's [react-autocomplete](https://github.com/rackt/react-autocomplete), but there's been a lot of different changes made since then.
 
 ## Installation
 
-`npm install hellojwilde/react-autocomplete`
+`npm install hellojwilde/react-combobox`
 
-## WIP
-
-This is not production ready, but I welcome use-cases opened in the issues :)
+You'll need to make sure you're including the `styles.css` file in the root of the npm module in your app somehow.
 
 ## Demo
 
-http://jwilde.me/react-autocomplete/example/
+http://jwilde.me/react-combobox/example/
 
-## Example
+## How do you use it?
 
-Check out the examples directory for a more complete implementation example.
+The same way you would use an input component in React.
 
 ```js
-var Autocomplete = require('react-autocomplete');
+var Combobox = require('react-combobox');
 
-// its actually called a combobox, but noboby searches for that
-var Combobox = Autocomplete.Combobox; 
-var Option = Autocomplete.Option;
+var AWESOME_PEOPLE = [
+  'Ryan Florence',
+  'Pete Hunt', 
+  'Jonathan Wilde'
+];
 
-var comboboxinItUp = (
+var MyAppWithACombobox = React.createClass({
 
-  // Just like <select><option/></select>, this component is a
-  // composite component. This gives you complete control over
-  // What is displayed inside the <Option>s as well as allowing
-  // you to render whatever you want inside, like a "no results"
-  // message that isn't interactive like the <Options> are.
+  getInitialState: function() {
+    return {value: {selectedValue: null, inputValue: ''}};
+  },
 
-  // Start with the <Combobox/> and give it some handlers.
+  getOptionsForInputValue: function(inputValue, callback) {
+    inputValue = inputValue.toLowerCase();
 
-  <Combobox
-    onInput={handleInput}
-    onSelect={handleSelect}
-    autocomplete="both"
-  >
+    callback(
+      AWESOME_PEOPLE
+        .map((person) => person.toLowerCase())
+        .filter((person) => person.indexOf(inputValue) === 0)
+    );
+  },
 
-    // `onInput` is called when the user is typing, it gets passed the
-    // value from the input. This is your chance to filter the Options
-    // and redraw. More realistically, you'd make a request to get data
-    // and then redraw when it lands.
-    //
-    // `onSelect` is called when the user makes a selection, you probably
-    // want to reset the Options to your full dataset again, or maybe
-    // deal with the value and then clear it out if this is used to
-    // populate a list.
-    //
-    // `autocomplete` defaults to 'both'. 'inline' will autocomplete the
-    // first matched Option into the input value, 'list' will display a
-    // list of choices, and of course, both does both.
- 
-    // When this option is selected, `onSelect` will be called with the
-    // value `"foo"`.
-    <Option value="foo">Foo</Option>
+  handleChange: function(newValue) {
+    this.setState({value: newValue});
+  },
 
-    // `label` is the text to display in the input when the Option is
-    // selected. It defaults to the content of the Option just like a
-    // real <option>. (Maybe the value should too, now that I'm writing
-    // this, but it doesn't yet)
-    <Option value="bar" label="not bar at all">Bar</Option>
-  </Combobox>
-);
+  render: function() {
+    <div className="app">
+      <Combobox
+        getOptionsForInputValue={this.getOptionsForInputValue}
+        onChange={this.handleChange}
+        value={this.state.value}
+      />
+      <p>Selection: {this.state.value.selectedValue}</p>
+    </div>
+  }
+
+});
 ```
 
-  [wai-aria]:http://www.w3.org/TR/wai-aria/roles#combobox
-  [react]:http://facebook.github.io/react/
+Check out more [examples](https://github.com/hellojwilde/react-combobox/tree/master/examples).
 

@@ -52,21 +52,19 @@ var Combobox = React.createClass({
      * new autocompletion results are available.
      * @type {function}
      */
-    getValuesForInput: React.PropTypes.func,
+    getOptionsForInput: React.PropTypes.func,
 
     /**
      * Represents the current content value of the combobox:
      *  - `inputValue` is the text that the user typed in the combobox.
      *    Defaults to ''.
-     *  - `focusedIndex` is the autocomplete result ID selected in the list.
-     *    Defaults to null when nothing is selected.
-     *  - `value` is the selected value in the combobox.
+     *  - `selectedValue` is the selected value in the combobox.
      *    Defaults to null when nothing is selected.
      * @type {object}
      */
     value: React.PropTypes.shape({
       inputValue: React.PropTypes.string,
-      value: React.PropTypes.any
+      selectedValue: React.PropTypes.any
     }),
 
     /**
@@ -150,7 +148,8 @@ var Combobox = React.createClass({
     this.setState({isOpen: false});
   },
 
-  handleRequestSelect: function(value, isFromOptions) {
+  handleRequestSelect: function(selectedValue, isFromOptions) {
+    // XXX This is a hack to allow us to track 
     if (!isFromOptions && this.state.optionIndex != null) {
       return;
     }
@@ -158,7 +157,7 @@ var Combobox = React.createClass({
     this.props.onSelect(value);
     this.props.onChange({
       inputValue: this.props.getLabelForOption(value),
-      value: value
+      selectedValue: selectedValue
     });
 
     this.setState({isOpen: false});
@@ -204,7 +203,7 @@ var Combobox = React.createClass({
           onRequestFocus={this.handleRequestFocus}
           onRequestFocusNext={this.handleRequestFocusNext}
           onRequestFocusPrevious={this.handleRequestFocusPrevious}
-          onRequestSelect={this.handleRequestSelect}
+          onRequestSelect={this.handleRequestSelect.bind(this, true)}
           optionIndex={this.state.optionIndex}
           options={this.state.options}
           popupId={this.state.popupId}
@@ -241,7 +240,7 @@ var Combobox = React.createClass({
           onRequestFocus={this.handleRequestFocus}
           onRequestFocusNext={this.handleRequestFocusNext}
           onRequestFocusPrevious={this.handleRequestFocusPrevious}
-          onRequestSelect={this.handleRequestSelect}
+          onRequestSelect={this.handleRequestSelect.bind(this, false)}
           optionIndex={this.state.optionIndex}
           popupId={this.state.popupId}
         />

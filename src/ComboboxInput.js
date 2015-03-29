@@ -38,9 +38,13 @@ var ComboboxInput = React.createClass({
       return;
     }
 
+    // Provided that we have an autocomplete option, and we're not currently
+    // trying getting rid of text from the box, inset a possible autocompletion
+    // result and highlight the part that was inserted.
+
     var input = this.refs.input.getDOMNode();
-    var inputValue = input.value;
-    var label = this.props.getLabelForOption(this.props.autocompleteOption);
+    var {inputValue, autocompleteOption} = this.props;
+    var label = this.props.getLabelForOption(autocompleteOption);
     var range = this.props.getLabelSelectionRange(inputValue, label);
 
     if (range) {

@@ -33,7 +33,7 @@ var App = React.createClass({
     return (
       <div>
         <h1>React Combobox</h1>
-        <p><a href="https://github.com/rpflorence/react-combobox/blob/master/examples/flickr/main.js">Demo Source</a></p>
+        <p><a href="https://github.com/hellojwilde/react-combobox/blob/master/examples/flickr/main.js">Demo Source</a></p>
         <FlickrInput
           value={this.state.value}
           onChange={this.handleChange}

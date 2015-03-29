@@ -30,10 +30,7 @@ var ComboboxList = React.createClass({
   },
 
   requestSelect: function() {
-    this.props.onRequestSelect(
-      this.props.options[this.props.optionIndex], 
-      true
-    )
+    this.props.onRequestSelect(this.props.options[this.props.optionIndex])
   },
 
   handleFocus: function() {

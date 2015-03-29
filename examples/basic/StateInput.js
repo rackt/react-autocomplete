@@ -1,4 +1,4 @@
-var Combobox = require('../../lib/Combobox');
+var Combobox = require('../../src/Combobox');
 var React = require('react');
 var StateData = require('./StateData');
 
