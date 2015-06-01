@@ -21,9 +21,9 @@ var App = React.createClass({
   // called by the combobox when the user types into the field the point is to
   // set some state to cause a redraw of the options
   handleInput: function(userInput) {
-    // make sure to clear out the current selection
+    // make sure to clear out the current selection...
     this.setState({selectedStateId: null}, function() {
-      // and then do our client-side filtering, need to do it after setState has happened
+      // ...and then do our client-side filtering, need to do it after setState has happened
       // so that the value doesn't get rerendered to the old selectedStateId
       // (this might be bad implementation at this point, still exploring a better
       // way to handle this)
