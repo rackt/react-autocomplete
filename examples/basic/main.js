@@ -23,8 +23,8 @@ var App = React.createClass({
   handleInput: function(userInput) {
     // make sure to clear out the current selection
     this.setState({selectedStateId: null}, function() {
-      // and then do our client-side filtering, need to it after setState has happened
-      // so that the value doesn't get rerendered to hte old selectedStateId
+      // and then do our client-side filtering, need to do it after setState has happened
+      // so that the value doesn't get rerendered to the old selectedStateId
       // (this might be bad implementation at this point, still exploring a better
       // way to handle this)
       this.filterStates(userInput);
