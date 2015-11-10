@@ -145,6 +145,7 @@ var Autocomplete = React.createClass({
           isOpen: false
         }, function () {
           React.findDOMNode(_this2.refs.input).select();
+          _this2.props.onSelect(_this2.state.value);
         });
       } else {
         var item = this.getFilteredItems()[this.state.highlightedIndex];
@@ -175,7 +176,7 @@ var Autocomplete = React.createClass({
 
     if (this.props.shouldItemRender) {
       items = items.filter(function (item) {
-        return _this3.props.shouldItemRender(item, _this3.state.value);
+        return item && _this3.props.shouldItemRender(item, _this3.state.value);
       });
     }
 
@@ -272,17 +273,6 @@ var Autocomplete = React.createClass({
     return React.cloneElement(menu, { ref: 'menu' });
   },
 
-  getActiveItemValue: function getActiveItemValue() {
-    if (this.state.highlightedIndex === null) return '';else {
-      var item = this.props.items[this.state.highlightedIndex];
-      // items can match when we maybeAutoCompleteText, but then get replaced by the app
-      // for the next render? I think? TODO: file an issue (alab -> enter -> type 'a' for
-      // alabamaa and then an error would happen w/o this guard, pretty sure there's a
-      // better way)
-      return item ? this.props.getItemValue(item) : '';
-    }
-  },
-
   handleInputBlur: function handleInputBlur() {
     if (this._ignoreBlur) return;
     this.setState({
@@ -316,7 +306,6 @@ var Autocomplete = React.createClass({
       React.createElement('input', _extends({}, this.props.inputProps, {
         role: 'combobox',
         'aria-autocomplete': 'both',
-        'aria-label': this.getActiveItemValue(),
         ref: 'input',
         onFocus: this.handleInputFocus,
         onBlur: this.handleInputBlur,
