@@ -21,6 +21,8 @@ let App = React.createClass({
           letter of the alphabet.
         </p>
         <Autocomplete
+          labelText="Choose a state from the US"
+          inputProps={{name: "US state"}}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
           onSelect={() => this.setState({ unitedStates: [] }) }
