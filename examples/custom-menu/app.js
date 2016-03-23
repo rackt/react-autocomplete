@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Autocomplete from '../../lib/index'
 import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from '../../lib/utils'
 
@@ -75,6 +76,6 @@ let App = React.createClass({
   }
 })
 
-React.render(<App/>, document.getElementById('container'))
+ReactDOM.render(<App/>, document.getElementById('container'))
 
 
