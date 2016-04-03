@@ -17,6 +17,7 @@ let App = React.createClass({
         </p>
 
         <Autocomplete
+          id="state-autocomplete"
           value={this.state.value}
           labelText="Choose a state from the US"
           inputProps={{name: "US state"}}
