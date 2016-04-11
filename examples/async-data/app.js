@@ -24,6 +24,11 @@ let App = React.createClass({
           attempt to autocomplete the first one.
         </p>
 
+        {/*
+          Note that the 'id' prop is optional, but if you intend to use this
+          component in a universal (isomorphic) application, omitting it will
+          probably cause a server-client mismatch.
+        */}
         <Autocomplete
           labelText="Choose a state from the US"
           inputProps={{name: "US state"}}
@@ -31,6 +36,7 @@ let App = React.createClass({
           value={this.state.value}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
+          id="autocomplete-us-state"
           onSelect={(value, item) => {
             // set the menu to only the selected item
             this.setState({ value, unitedStates: [ item ] })
