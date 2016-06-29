@@ -2,8 +2,6 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -38,20 +36,23 @@ var _Autocomplete2 = _interopRequireDefault(_Autocomplete);
 
 var _utils = require('../utils');
 
-var expect = _chai2['default'].expect;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_chai2['default'].use((0, _chaiEnzyme2['default'])());
+var expect = _chai2.default.expect;
+
+
+_chai2.default.use((0, _chaiEnzyme2.default)());
 
 function AutocompleteComponentJSX(extraProps) {
-  return _react2['default'].createElement(_Autocomplete2['default'], _extends({
+  return _react2.default.createElement(_Autocomplete2.default, _extends({
     labelText: 'Choose a state from the US',
     inputProps: { name: "US state" },
-    getItemValue: function (item) {
+    getItemValue: function getItemValue(item) {
       return item.name;
     },
     items: (0, _utils.getStates)(),
-    renderItem: function (item, isHighlighted) {
-      return _react2['default'].createElement(
+    renderItem: function renderItem(item, isHighlighted) {
+      return _react2.default.createElement(
         'div',
         {
           style: isHighlighted ? _utils.styles.highlightedItem : _utils.styles.item,
@@ -71,13 +72,13 @@ describe('Autocomplete acceptance tests', function () {
 
   it('should display autocomplete menu when input has focus', function () {
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
     expect(autocompleteWrapper.instance().refs.menu).to.not.exist;
 
     // Display autocomplete menu upon input focus
     autocompleteInputWrapper.simulate('focus');
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.instance().refs.menu).to.exist;
   });
 
@@ -93,7 +94,7 @@ describe('Autocomplete acceptance tests', function () {
 
     autocompleteInputWrapper.simulate('blur');
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
     expect(autocompleteWrapper.instance().refs.menu).to.not.exist;
   });
 });
@@ -110,7 +111,8 @@ describe('Autocomplete keyPress-><character> event handlers', function () {
     var value = '';
     autocompleteWrapper.setProps({ value: value, onChange: function onChange(_, v) {
         value = v;
-      } });
+      }
+    });
 
     autocompleteInputWrapper.get(0).value = 'a';
     autocompleteInputWrapper.simulate('keyPress', { key: 'a', keyCode: 97, which: 97 });
@@ -133,7 +135,7 @@ describe('Autocomplete kewDown->ArrowDown event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: "ArrowDown", keyCode: 40, which: 40 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.state('highlightedIndex')).to.equal(0);
   });
 
@@ -147,7 +149,7 @@ describe('Autocomplete kewDown->ArrowDown event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: "ArrowDown", keyCode: 40, which: 40 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.state('highlightedIndex')).to.equal(n + 1);
   });
 
@@ -160,7 +162,7 @@ describe('Autocomplete kewDown->ArrowDown event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: "ArrowDown", keyCode: 40, which: 40 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.state('highlightedIndex')).to.equal(0);
   });
 });
@@ -178,7 +180,7 @@ describe('Autocomplete kewDown->ArrowUp event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: 'ArrowUp', keyCode: 38, which: 38 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.state('highlightedIndex')).to.equal(49);
   });
 
@@ -192,7 +194,7 @@ describe('Autocomplete kewDown->ArrowUp event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: 'ArrowUp', keyCode: 38, which: 38 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.state('highlightedIndex')).to.equal(n - 1);
   });
 
@@ -205,7 +207,7 @@ describe('Autocomplete kewDown->ArrowUp event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: 'ArrowUp', keyCode: 38, which: 38 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.true;
     expect(autocompleteWrapper.state('highlightedIndex')).to.equal(49);
   });
 });
@@ -218,7 +220,7 @@ describe('Autocomplete kewDown->Enter event handlers', function () {
   it('should do nothing if the menu is closed', function () {
     autocompleteWrapper.setState({ 'isOpen': false });
     autocompleteWrapper.simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
   });
 
   it('should close menu if input has focus but no item has been selected and then the Enter key is hit', function () {
@@ -227,16 +229,17 @@ describe('Autocomplete kewDown->Enter event handlers', function () {
     autocompleteInputWrapper.simulate('focus');
     autocompleteWrapper.setProps({ value: value, onSelect: function onSelect(v) {
         value = v;
-      } });
+      }
+    });
 
     // simulate keyUp of backspace, triggering autocomplete suggestion on an empty string, which should result in nothing highlighted
     autocompleteInputWrapper.simulate('keyUp', { key: 'Backspace', keyCode: 8, which: 8 });
-    expect(autocompleteWrapper.state('highlightedIndex')).to.be['null'];
+    expect(autocompleteWrapper.state('highlightedIndex')).to.be.null;
 
     autocompleteInputWrapper.simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
 
     expect(value).to.equal('');
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
   });
 
   it('should invoke `onSelect` with the selected menu item and close the menu', function () {
@@ -246,7 +249,8 @@ describe('Autocomplete kewDown->Enter event handlers', function () {
     autocompleteInputWrapper.simulate('focus');
     autocompleteWrapper.setProps({ value: value, onSelect: function onSelect(v) {
         value = v;
-      } });
+      }
+    });
 
     // simulate keyUp of last key, triggering autocomplete suggestion + selection of the suggestion in the menu
     autocompleteInputWrapper.simulate('keyUp', { key: 'r', keyCode: 82, which: 82 });
@@ -254,10 +258,11 @@ describe('Autocomplete kewDown->Enter event handlers', function () {
     // Hit enter, updating state.value with the selected Autocomplete suggestion
     autocompleteInputWrapper.simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13, preventDefault: function preventDefault() {
         defaultPrevented = true;
-      } });
+      }
+    });
     expect(value).to.equal('Arizona');
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
-    expect(defaultPrevented).to.be['true'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
+    expect(defaultPrevented).to.be.true;
   });
 });
 
@@ -272,8 +277,8 @@ describe('Autocomplete kewDown->Escape event handlers', function () {
 
     autocompleteInputWrapper.simulate('keyDown', { key: 'Escape', keyCode: 27, which: 27 });
 
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
-    expect(autocompleteWrapper.state('highlightedIndex')).to.be['null'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
+    expect(autocompleteWrapper.state('highlightedIndex')).to.be.null;
   });
 });
 
@@ -299,7 +304,7 @@ describe('Autocomplete click event handlers', function () {
     // Click inside input, updating state.value with the selected Autocomplete suggestion
     autocompleteInputWrapper.simulate('click');
     expect(value).to.equal('Arizona');
-    expect(autocompleteWrapper.state('isOpen')).to.be['false'];
+    expect(autocompleteWrapper.state('isOpen')).to.be.false;
   });
 });
 
