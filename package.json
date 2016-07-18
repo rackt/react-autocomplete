@@ -29,6 +29,7 @@
     "babel-register": "^6.6.5",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.4.0",
+    "chai-spies": "^0.7.1",
     "enzyme": "^2.0.0",
     "isparta": "^4.0.0",
     "jsdom": "^8.1.0",
