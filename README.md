@@ -25,3 +25,27 @@ Write them:
 
 Check your work:
 `npm run coverage`
+
+# Props
+
+Because `react-autocomplete` is just one component, the main customization come
+from passing props to the `Autocomplete` component.
+
+## Required props
+
+### `getItemValue` (function)
+### `renderItem` (function)
+
+## Optional props
+
+### `value` (any)
+### `onChange` (function)
+### `onSelect` (function)
+### `shouldItemRender` (function)
+### `sortItems` (function)
+### `renderMenu` (function)
+### `menuStyle` (object)
+### `inputProps` (object)
+### `wrapperProps` (object)
+### `wrapperStyle` (object)
+### `debug` (bool)
