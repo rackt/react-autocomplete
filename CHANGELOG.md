@@ -1,3 +1,8 @@
+Unreleased (add items here not officially published)
+--------------------------------------
+- Remove `setSelectionRange`, preventing mobile users from being able to use the input
+
+
 v1.0.1 - 26 June 2016
 --------------------------------------
 
