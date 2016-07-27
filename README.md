@@ -28,24 +28,42 @@ Check your work:
 
 # Props
 
-Because `react-autocomplete` is just one component, the main customization come
-from passing props to the `Autocomplete` component.
+Because `react-autocomplete` is just one component, the main customization comes
+from just passing props to the `Autocomplete` component. `react-autocomplete`
+will at least function with just the required props having been passed.
 
 ## Required props
 
+### `items` (array)
+
+This is an array of the items, themselves, to be put in the list for
+autocomplete to show as possible options and to compare against when the user
+has typed in a value. The `shouldItemRender` prop function compares the `value`
+against this list.
+
 ### `getItemValue` (function)
+
+A function that maps the objects in the list to the value to actually show in
+the list. This makes it possible to pass an array of objects to the autocomplete
+but let the user find values based solely on a specifically key.
+
 ### `renderItem` (function)
+
+A function that returns a React element to show as an item in the list. Two
+props are passed to the function, `item` and `isHighlighted`, which allow the
+items in the list to be customized and styled. To style the container of these
+items, review the `menuStyle` prop.
 
 ## Optional props
 
 ### `value` (any)
+### `debug` (bool)
+### `inputProps` (object)
+### `menuStyle` (object)
 ### `onChange` (function)
 ### `onSelect` (function)
+### `renderMenu` (function)
 ### `shouldItemRender` (function)
 ### `sortItems` (function)
-### `renderMenu` (function)
-### `menuStyle` (object)
-### `inputProps` (object)
 ### `wrapperProps` (object)
 ### `wrapperStyle` (object)
-### `debug` (bool)
