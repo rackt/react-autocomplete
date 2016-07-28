@@ -1,13 +1,13 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.matchStateToTerm = matchStateToTerm;
 exports.sortStates = sortStates;
 exports.fakeRequest = fakeRequest;
 exports.getStates = getStates;
-var styles = {
+var styles = exports.styles = {
   item: {
     padding: '2px 6px',
     cursor: 'default'
@@ -24,8 +24,6 @@ var styles = {
     border: 'solid 1px #ccc'
   }
 };
-
-exports.styles = styles;
 
 function matchStateToTerm(state, value) {
   return state.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || state.abbr.toLowerCase().indexOf(value.toLowerCase()) !== -1;
