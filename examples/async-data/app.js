@@ -16,17 +16,17 @@ let App = React.createClass({
   render () {
     return (
       <div>
-        <h1>Async Data</h1>
-        <p>
-          Autocomplete works great with async data by allowing you to pass in
-          items. The <code>onChange</code> event provides you the value to make
-          a server request with, then change state and pass in new items, it will
-          attempt to autocomplete the first one.
-        </p>
-        <label htmlFor="states-autocomplete">Choose a state from the US</label>
-        <Autocomplete
-          inputProps={{name: "US state", id: "states-autocomplete"}}
-          ref="autocomplete"
+          <h1>Async Data</h1>
+          <p>
+              Autocomplete works great with async data by allowing you to pass in
+              items. The <code>onChange</code> event provides you the value to make
+              a server request with, then change state and pass in new items, it will
+              attempt to autocomplete the first one.
+          </p>
+          <label htmlFor="states-autocomplete">Choose a state from the US</label>
+          <Autocomplete
+              inputProps={{name: "US state", id: "states-autocomplete"}}
+              ref={c => this.autocomplete = c}
           value={this.state.value}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
@@ -56,4 +56,3 @@ let App = React.createClass({
 })
 
 DOM.render(<App/>, document.getElementById('container'))
-
