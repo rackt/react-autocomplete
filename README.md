@@ -86,8 +86,8 @@ fine-grained control over the dropdown menu dynamics.
 ### `renderMenu: Function` (optional)
 Default value:
 ```jsx
-function(items, value, style) {
-  return <div style={{...style, ...this.menuStyle}} children={items}/>
+function(isOpen, items, value, style) {
+  return <div style={{...style, ...this.menuStyle, display: isOpen ? 'block' : 'none'}} children={items}/>
 }
 ```
 

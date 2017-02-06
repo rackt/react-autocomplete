@@ -49,11 +49,19 @@ class App extends Component {
               {item.name}
             </div>
           )}
-          renderMenu={children =>
-              <div style={{ ...styles.menu, position: 'absolute', width: '100%' }}>
-                  {children}
+          renderMenu={(isOpen, children) => {
+            const style = {
+              ...styles.menu,
+              position: 'absolute',
+              width: '100%',
+              display: (isOpen ? 'block' : 'none')
+            };
+            return (
+              <div style={style}>
+                {children}
               </div>
-          }
+            )
+          }}
           wrapperStyle={{ position: 'relative', display: 'inline-block' }}
           onMenuVisibilityChange={isOpen => this.setState({ isOpen })}
           open={open}
