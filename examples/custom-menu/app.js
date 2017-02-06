@@ -42,7 +42,7 @@ let App = React.createClass({
               id={item.abbr}
             >{item.name}</div>
           )}
-          renderMenu={(items, value, style) => (
+          renderMenu={(isOpen, items, value, style) => (
             <div style={{...styles.menu, ...style}}>
               {value === '' ? (
                 <div style={{padding: 6}}>Type of the name of a United State</div>
