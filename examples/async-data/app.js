@@ -26,7 +26,7 @@ let App = React.createClass({
         <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
           inputProps={{name: "US state", id: "states-autocomplete"}}
-          ref="autocomplete"
+          ref={c => this.autocomplete = c}
           value={this.state.value}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
