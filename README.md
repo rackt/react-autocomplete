@@ -53,7 +53,7 @@ Default value: `{}`
 Props that are applied to the `<input />` element rendered by
 `Autocomplete`. Any properties supported by `HTMLInputElement` can be
 specified, apart from the following which are set by `Autocomplete`:
-value, autoComplete, role, aria-autocomplete
+value, role, aria-autocomplete
 
 ### `menuStyle: Object` (optional)
 Default value:
