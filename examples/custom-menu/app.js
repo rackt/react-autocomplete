@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
 import { getStates, styles, fakeRequest } from '../../lib/utils'
 
-let App = React.createClass({
-
-  getInitialState() {
-    return {
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
       value: '',
       unitedStates: getStates(),
       loading: false
     }
-  },
+  }
 
   render() {
     return (
@@ -56,7 +56,7 @@ let App = React.createClass({
         />
       </div>
     )
-  },
+  }
 
   renderItems(items) {
     return items.map((item, index) => {
@@ -75,7 +75,7 @@ let App = React.createClass({
       }
     })
   }
-})
+}
 
 DOM.render(<App/>, document.getElementById('container'))
 
