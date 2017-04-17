@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import DOM from 'react-dom'
 import { getStates, matchStateToTerm, sortStates, styles } from '../../lib/utils'
 import Autocomplete from '../../lib/index'
 
-let App = React.createClass({
-  getInitialState() {
-    return { value: 'Ma' }
-  },
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { value: 'Ma' }
+  }
+
   render() {
     return (
       <div>
@@ -35,7 +37,7 @@ let App = React.createClass({
       </div>
     )
   }
-})
+}
 
 DOM.render(<App/>, document.getElementById('container'))
 
