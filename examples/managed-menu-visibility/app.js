@@ -1,19 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
 import { getStates, matchStateToTerm, styles } from '../../lib/utils'
 
 const STATES = getStates();
 
-class App extends Component {
+class App extends React.Component {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      value: '',
-      isOpen: false,
-      forceOpen: false,
-    }
+  state = {
+    value: '',
+    isOpen: false,
+    forceOpen: false,
   }
 
   render () {
