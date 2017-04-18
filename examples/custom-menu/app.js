@@ -3,15 +3,31 @@ import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
 import { getStates, styles, fakeRequest } from '../../lib/utils'
 
-let App = React.createClass({
+class App extends React.Component {
 
-  getInitialState() {
-    return {
-      value: '',
-      unitedStates: getStates(),
-      loading: false
-    }
-  },
+  state = {
+    value: '',
+    unitedStates: getStates(),
+    loading: false
+  }
+
+  renderItems(items) {
+    return items.map((item, index) => {
+      const text = item.props.children
+      if (index === 0 || items[index - 1].props.children.charAt(0) !== text.charAt(0)) {
+        const style = {
+          background: '#eee',
+          color: '#454545',
+          padding: '2px 6px',
+          fontWeight: 'bold'
+        }
+        return [<div style={style}>{text.charAt(0)}</div>, item]
+      }
+      else {
+        return item
+      }
+    })
+  }
 
   render() {
     return (
@@ -56,26 +72,8 @@ let App = React.createClass({
         />
       </div>
     )
-  },
-
-  renderItems(items) {
-    return items.map((item, index) => {
-      const text = item.props.children
-      if (index === 0 || items[index - 1].props.children.charAt(0) !== text.charAt(0)) {
-        const style = {
-          background: '#eee',
-          color: '#454545',
-          padding: '2px 6px',
-          fontWeight: 'bold'
-        }
-        return [<div style={style}>{text.charAt(0)}</div>, item]
-      }
-      else {
-        return item
-      }
-    })
   }
-})
+}
 
 DOM.render(<App/>, document.getElementById('container'))
 

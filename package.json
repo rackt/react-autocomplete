@@ -54,6 +54,7 @@
     "lodash.flow": "^3.5.0",
     "lodash.map": "^4.6.0",
     "lodash.sortby": "^4.7.0",
+    "prop-types": "^15.5.8",
     "react": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
     "react-docgen": "^2.13.0",
