@@ -37,7 +37,7 @@ class App extends React.Component {
           onChange={(event, value) => {
             this.setState({ value, loading: true })
             fakeRequest(value, (items) => {
-              this.setState({ unitedStates: items, loading: false })
+              this.setState({ unitedStates: [...items], loading: false })
             })
           }}
           renderItem={(item, isHighlighted) => (
