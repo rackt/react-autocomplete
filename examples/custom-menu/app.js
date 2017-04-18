@@ -11,12 +11,11 @@ class App extends React.Component {
     loading: false
   }
 
-  renderItems (items) {
-    console.log(items)
+  renderItems(items) {
     return items.map((item, index) => {
-      var text = item.props.children
+      const text = item.props.children
       if (index === 0 || items[index - 1].props.children.charAt(0) !== text.charAt(0)) {
-        var style = {
+        const style = {
           background: '#eee',
           color: '#454545',
           padding: '2px 6px',

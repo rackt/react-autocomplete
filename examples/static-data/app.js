@@ -9,7 +9,7 @@ class App extends React.Component {
     value: 'Ma'
   }
 
-  render () {
+  render() {
     return (
       <div>
         <h1>Basic Example with Static Data</h1>
