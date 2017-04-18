@@ -1,6 +1,6 @@
 {
   "name": "react-autocomplete",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "description": "Accessible, extensible, Autocomplete for React.js",
   "main": "./build/lib/Autocomplete.js",
   "files": [
@@ -48,6 +48,7 @@
     "enzyme": "^2.0.0",
     "eslint": "^2.13.1",
     "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-react": "^6.10.3",
     "exorcist": "^0.4.0",
     "jest": "^13.0.0",
     "lodash.flow": "^3.5.0",

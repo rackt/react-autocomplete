@@ -20,8 +20,8 @@ yarn add react-autocomplete
 
 ### AMD/UMD
 
-* Development: [https://unpkg.com/react-autocomplete@1.4.1/dist/react-autocomplete.js](https://unpkg.com/react-autocomplete@1.4.1/dist/react-autocomplete.js)
-* Production: [https://unpkg.com/react-autocomplete@1.4.1/dist/react-autocomplete.min.js](https://unpkg.com/react-autocomplete@1.4.1/dist/react-autocomplete.min.js)
+* Development: [https://unpkg.com/react-autocomplete@1.4.4/dist/react-autocomplete.js](https://unpkg.com/react-autocomplete@1.4.4/dist/react-autocomplete.js)
+* Production: [https://unpkg.com/react-autocomplete@1.4.4/dist/react-autocomplete.min.js](https://unpkg.com/react-autocomplete@1.4.4/dist/react-autocomplete.min.js)
 
 ## API
 
@@ -106,7 +106,7 @@ fine-grained control over the dropdown menu dynamics.
 Default value:
 ```jsx
 function(items, value, style) {
-  return <div style={{...style, ...this.menuStyle}} children={items}/>
+  return <div style={{ ...style, ...this.menuStyle }} children={items}/>
 }
 ```
 

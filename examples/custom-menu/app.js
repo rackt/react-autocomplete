@@ -1,7 +1,7 @@
 import React from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
-import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from '../../lib/utils'
+import { getStates, styles, fakeRequest } from '../../lib/utils'
 
 class App extends React.Component {
 
@@ -30,7 +30,7 @@ class App extends React.Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <div>
         <h1>Custom Menu</h1>
@@ -42,7 +42,7 @@ class App extends React.Component {
         <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
           value={this.state.value}
-          inputProps={{name: "US state", id: "states-autocomplete"}}
+          inputProps={{ name: 'US state', id: 'states-autocomplete' }}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
           onSelect={(value, state) => this.setState({ value, unitedStates: [state] }) }
@@ -60,13 +60,13 @@ class App extends React.Component {
             >{item.name}</div>
           )}
           renderMenu={(items, value, style) => (
-            <div style={{...styles.menu, ...style}}>
+            <div style={{ ...styles.menu, ...style }}>
               {value === '' ? (
-                <div style={{padding: 6}}>Type of the name of a United State</div>
+                <div style={{ padding: 6 }}>Type of the name of a United State</div>
               ) : this.state.loading ? (
-                <div style={{padding: 6}}>Loading...</div>
+                <div style={{ padding: 6 }}>Loading...</div>
               ) : items.length === 0 ? (
-                <div style={{padding: 6}}>No matches for {value}</div>
+                <div style={{ padding: 6 }}>No matches for {value}</div>
               ) : this.renderItems(items)}
             </div>
           )}

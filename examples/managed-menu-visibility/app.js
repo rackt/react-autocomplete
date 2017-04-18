@@ -3,7 +3,7 @@ import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
 import { getStates, matchStateToTerm, styles } from '../../lib/utils'
 
-const STATES = getStates();
+const STATES = getStates()
 
 class App extends React.Component {
 
@@ -13,7 +13,7 @@ class App extends React.Component {
     forceOpen: false,
   }
 
-  render () {
+  render() {
     const { state } = this
     const open = state.forceOpen || state.isOpen
     return (
@@ -32,7 +32,7 @@ class App extends React.Component {
         <label htmlFor="states">Choose a US state</label>
         <Autocomplete
           value={state.value}
-          inputProps={{ id: "states" }}
+          inputProps={{ id: 'states' }}
           items={STATES}
           shouldItemRender={matchStateToTerm}
           getItemValue={item => item.name}

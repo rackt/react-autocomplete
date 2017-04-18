@@ -1,7 +1,7 @@
 import React from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
-import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from '../../lib/utils'
+import { getStates, styles, fakeRequest } from '../../lib/utils'
 
 class App extends React.Component {
 
@@ -11,7 +11,7 @@ class App extends React.Component {
     loading: false
   }
 
-  render () {
+  render() {
     return (
       <div>
         <h1>Async Data</h1>
@@ -23,7 +23,7 @@ class App extends React.Component {
         </p>
         <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
-          inputProps={{name: "US state", id: "states-autocomplete"}}
+          inputProps={{ name: 'US state', id: 'states-autocomplete' }}
           ref="autocomplete"
           value={this.state.value}
           items={this.state.unitedStates}
