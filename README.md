@@ -104,6 +104,11 @@ menu. This is useful if you want to force a certain state based on your
 UX/business logic. Use it together with `onMenuVisibilityChange` for
 fine-grained control over the dropdown menu dynamics.
 
+#### `placeholder: Any` (optional)
+Default placeholder: `''`
+
+The placeholder to display in the input field
+
 #### `renderMenu: Function` (optional)
 Default value:
 ```jsx
