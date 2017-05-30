@@ -2,6 +2,25 @@
 
 Accessible, extensible, Autocomplete for React.js.
 
+```jsx
+<Autocomplete
+  getItemValue={(item) => item.label}
+  items={[
+    { label: 'apple' },
+    { label: 'banana' },
+    { label: 'pear' }
+  ]}
+  renderItem={(item, isHighlighted) =>
+    <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+      {item.label}
+    </div>
+  }
+  value={value}
+  onChange={(e) => value = e.target.value}
+  onSelect={(val) => value = val}
+/>
+```
+
 [Examples](https://reactcommunity.org/react-autocomplete/)
 
 ## Install
@@ -20,8 +39,8 @@ yarn add react-autocomplete
 
 ### AMD/UMD
 
-* Development: [https://unpkg.com/react-autocomplete@1.5.4/dist/react-autocomplete.js](https://unpkg.com/react-autocomplete@1.5.4/dist/react-autocomplete.js)
-* Production: [https://unpkg.com/react-autocomplete@1.5.4/dist/react-autocomplete.min.js](https://unpkg.com/react-autocomplete@1.5.4/dist/react-autocomplete.min.js)
+* Development: [https://unpkg.com/react-autocomplete@1.5.5/dist/react-autocomplete.js](https://unpkg.com/react-autocomplete@1.5.5/dist/react-autocomplete.js)
+* Production: [https://unpkg.com/react-autocomplete@1.5.5/dist/react-autocomplete.min.js](https://unpkg.com/react-autocomplete@1.5.5/dist/react-autocomplete.min.js)
 
 ## API
 
