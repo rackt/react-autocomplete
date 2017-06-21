@@ -68,6 +68,12 @@ Default value: `true`
 Whether or not to automatically highlight the top match in the dropdown
 menu.
 
+#### `autoSelect: Boolean` (optional)
+Default value: `false`
+
+Whether or not to automatically select highlighted value when user
+closes menu
+
 #### `inputProps: Object` (optional)
 Default value: `{}`
 
