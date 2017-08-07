@@ -156,6 +156,11 @@ Default value: `''`
 
 The value to display in the input field
 
+#### `placeholder: Any` (optional)
+Default value: `''`
+
+The value to display before is entered any text in the input field
+
 #### `wrapperProps: Object` (optional)
 Default value: `{}`
 
