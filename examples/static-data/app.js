@@ -1,6 +1,6 @@
 import React from 'react'
 import DOM from 'react-dom'
-import { getStates, matchStateToTerm, sortStates, styles } from '../../lib/utils'
+import { getStates, matchStateToTerm, sortStates } from '../../lib/utils'
 import Autocomplete from '../../lib/index'
 
 class App extends React.Component {
@@ -16,16 +16,22 @@ class App extends React.Component {
         <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
           value={this.state.value}
-          inputProps={{ name: 'US state', id: 'states-autocomplete' }}
+          inputProps={{ id: 'states-autocomplete' }}
+          wrapperStyle={{ position: 'relative', display: 'inline-block' }}
           items={getStates()}
           getItemValue={(item) => item.name}
           shouldItemRender={matchStateToTerm}
           sortItems={sortStates}
           onChange={(event, value) => this.setState({ value })}
           onSelect={value => this.setState({ value })}
+          renderMenu={children => (
+            <div className="menu">
+              {children}
+            </div>
+          )}
           renderItem={(item, isHighlighted) => (
             <div
-              style={isHighlighted ? styles.highlightedItem : styles.item}
+              className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
               key={item.abbr}
             >{item.name}</div>
           )}

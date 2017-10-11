@@ -4,6 +4,39 @@ We try to follow [http://keepachangelog.com/](http://keepachangelog.com/) recomm
 ## [Unreleased]
 _(add items here for easier creation of next log entry)_
 
+## [1.7.2] - 2017-10-8
+### Changed
+- Include React v16 in peer-dependency version range (#280)
+
+## [1.7.1] - 2017-08-20
+### Fixed
+- Do not select an item on Enter keypress when keyCode is not 13 (#201)
+
+## [1.7.0] - 2017-08-20
+### Added
+- `props.selectOnBlur` to select any highlighted item on blur (#251)
+
+## [1.6.0] - 2017-08-19
+### Added
+- `props.renderInput` to allow custom `<input>` components (#247)
+
+## [1.5.10] - 2017-07-20
+### Fixed
+- Make setState updaters compatible with preact-compat (#258)
+
+## [1.5.9] - 2017-06-16
+### Fixed
+- Reworked focus management to be more consistent and handle edge cases (async focus, input out of viewport, etc., read more in #153, #246, #222, & #240)
+
+## [1.5.8] - 2017-06-16
+### Fixed
+- Ensure top match is highlighted even if `props.items` arrive out of order (async) (#249)
+
+## [1.5.7] - 2017-06-14
+### Changed
+- Improve auto highlight logic, reduces render count and fixes some edge cases
+- Make `props.debug` only show renders relating to the current instance
+
 ## [1.5.6] - 2017-06-01
 ### Fixed
 - Include prop-types in UMD build, fixes an unintentional breaking change introduced in 1.5.5
@@ -184,7 +217,15 @@ v0.1.0 - Wed, 12 Aug 2015 19:22:26 GMT
 
 -
 
-[Unreleased]: https://github.com/reactjs/react-autocomplete/compare/v1.5.6...HEAD
+[Unreleased]: https://github.com/reactjs/react-autocomplete/compare/v1.7.2...HEAD
+[1.7.2]: https://github.com/reactjs/react-autocomplete/compare/v1.7.1...v1.7.2
+[1.7.1]: https://github.com/reactjs/react-autocomplete/compare/v1.7.0...v1.7.1
+[1.7.0]: https://github.com/reactjs/react-autocomplete/compare/v1.6.0...v1.7.0
+[1.6.0]: https://github.com/reactjs/react-autocomplete/compare/v1.5.10...v1.6.0
+[1.5.10]: https://github.com/reactjs/react-autocomplete/compare/v1.5.9...v1.5.10
+[1.5.9]: https://github.com/reactjs/react-autocomplete/compare/v1.5.8...v1.5.9
+[1.5.8]: https://github.com/reactjs/react-autocomplete/compare/v1.5.7...v1.5.8
+[1.5.7]: https://github.com/reactjs/react-autocomplete/compare/v1.5.6...v1.5.7
 [1.5.6]: https://github.com/reactjs/react-autocomplete/compare/v1.5.5...v1.5.6
 [1.5.5]: https://github.com/reactjs/react-autocomplete/compare/v1.5.4...v1.5.5
 [1.5.4]: https://github.com/reactjs/react-autocomplete/compare/v1.5.3...v1.5.4

@@ -1,15 +1,16 @@
 import React from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
-import { getStates, styles, fakeRequest } from '../../lib/utils'
+import { getStates, fakeRequest } from '../../lib/utils'
 
 class App extends React.Component {
 
   state = {
     value: '',
     unitedStates: getStates(),
-    loading: false
   }
+
+  requestTimer = null
 
   render() {
     return (
@@ -23,8 +24,8 @@ class App extends React.Component {
         </p>
         <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
-          inputProps={{ name: 'US state', id: 'states-autocomplete' }}
-          ref="autocomplete"
+          inputProps={{ id: 'states-autocomplete' }}
+          wrapperStyle={{ position: 'relative', display: 'inline-block' }}
           value={this.state.value}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
@@ -35,16 +36,21 @@ class App extends React.Component {
             // this.setState({ unitedStates: getStates() })
           }}
           onChange={(event, value) => {
-            this.setState({ value, loading: true })
-            fakeRequest(value, (items) => {
-              this.setState({ unitedStates: items, loading: false })
+            this.setState({ value })
+            clearTimeout(this.requestTimer)
+            this.requestTimer = fakeRequest(value, (items) => {
+              this.setState({ unitedStates: items })
             })
           }}
+          renderMenu={children => (
+            <div className="menu">
+              {children}
+            </div>
+          )}
           renderItem={(item, isHighlighted) => (
             <div
-              style={isHighlighted ? styles.highlightedItem : styles.item}
+              className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
               key={item.abbr}
-              id={item.abbr}
             >{item.name}</div>
           )}
         />

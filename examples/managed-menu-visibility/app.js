@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
-import { getStates, matchStateToTerm, styles } from '../../lib/utils'
+import { getStates, matchStateToTerm } from '../../lib/utils'
 
 const STATES = getStates()
 
@@ -43,24 +43,24 @@ class App extends Component {
           onChange={e => this.setState({ value: e.target.value })}
           renderItem={(item, isHighlighted) => (
             <div
-              style={isHighlighted ? styles.highlightedItem : styles.item}
+              className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
               key={item.abbr}
             >
               {item.name}
             </div>
           )}
           renderMenu={children =>
-              <div style={{ ...styles.menu, position: 'absolute', width: '100%' }}>
-                  {children}
-              </div>
+            <div className="menu">
+              {children}
+            </div>
           }
           wrapperStyle={{ position: 'relative', display: 'inline-block' }}
           onMenuVisibilityChange={isOpen => this.setState({ isOpen })}
           open={open}
         />
         <button
-            onClick={() => this.setState({ isOpen: !state.isOpen })}
-            disabled={state.forceOpen}
+          onClick={() => this.setState({ isOpen: !state.isOpen })}
+          disabled={state.forceOpen}
         >
           {open ? 'Close menu' : 'Open menu'}
         </button>
