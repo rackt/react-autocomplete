@@ -1,17 +1,20 @@
 import React from 'react'
 import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
-import { styles, fakeCategorizedRequest } from '../../lib/utils'
+import { fakeCategorizedRequest } from '../../lib/utils'
 
-let App = React.createClass({
+class App extends React.Component {
 
-  getInitialState() {
-    return {
+  constructor(props) {
+    super(props)
+    this.state = {
       value: '',
-      unitedStates: fakeCategorizedRequest(''),
+      unitedStates: [],//fakeCategorizedRequest(''),
       loading: false
     }
-  },
+    this.requestTimer = null
+    this.renderItems = this.renderItems.bind(this)
+  }
 
   render() {
     return (
@@ -24,7 +27,7 @@ let App = React.createClass({
         <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
           value={this.state.value}
-          inputProps={{ name: 'US state', id: 'states-autocomplete' }}
+          inputProps={{ id: 'states-autocomplete' }}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name || item.header}
           onSelect={(value, state) => this.setState({ value, unitedStates: [state] }) }
@@ -37,25 +40,25 @@ let App = React.createClass({
           renderItem={(item, isHighlighted) => (
             item.header ?
               <div
-                style={styles.header}
+                className="item item-header"
                 key={item.header}
                 id={item.header}
                 disabled={true}
               >{item.header}</div>
             : <div
-                style={isHighlighted ? styles.highlightedItem : styles.item}
+                className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
                 key={item.abbr}
                 id={item.abbr}
               >{item.name}</div>
           )}
-          renderMenu={(items, value, style) => (
-            <div style={{ ...styles.menu, ...style }}>
+          renderMenu={(items, value) => (
+            <div className="menu">
               {value === '' ? (
-                <div style={{ padding: 6 }}>Type of the name of a United State</div>
+                <div className="item">Type of the name of a United State</div>
               ) : this.state.loading ? (
-                <div style={{ padding: 6 }}>Loading...</div>
+                <div className="item">Loading...</div>
               ) : items.length === 0 ? (
-                <div style={{ padding: 6 }}>No matches for {value}</div>
+                <div className="item">No matches for {value}</div>
               ) : this.renderItems(items)}
             </div>
           )}
@@ -63,16 +66,16 @@ let App = React.createClass({
         />
       </div>
     )
-  },
+  }
 
   _headerCheck(item) {
     return !item.header
-  },
+  }
 
   renderItems(items) {
     return items
   }
-})
+}
 
 DOM.render(<App/>, document.getElementById('container'))
 
