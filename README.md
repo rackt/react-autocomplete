@@ -171,6 +171,13 @@ Invoked for each entry in `items` and its return value is used to
 determine whether or not it should be displayed in the dropdown menu.
 By default all items are always rendered.
 
+#### `isItemSelectable: Function` (optional)
+Arguments: `item: Any`
+
+Invoked for each entry in `items` and its return value is used to
+determine whether or not the item is selectable.  (returning `false`
+disables the item)
+
 #### `sortItems: Function` (optional)
 Arguments: `itemA: Any, itemB: Any, value: String`
 
