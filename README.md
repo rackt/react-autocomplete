@@ -208,6 +208,19 @@ This is a shorthand for `wrapperProps={{ style: <your styles> }}`.
 Note that `wrapperStyle` is applied before `wrapperProps`, so the latter
 will win if it contains a `style` entry.
 
+#### `valueItemComparison: Function` (optional)
+Arguments: `optionItemValue: String, inputValue: String`
+Default value: 
+```jsx
+{
+  return (optionItemValue.toLowerCase().indexOf(
+        inputValue.toLowerCase()
+      ) === 0)
+}
+```
+
+The function which is used to compare the current input value to the currently highlighted item in the options list. Where by default the first item in the options list is compared to the input value. Returns a `Boolean`.
+
 
 ### Imperative API
 
