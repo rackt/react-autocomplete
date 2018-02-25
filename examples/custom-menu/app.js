@@ -60,6 +60,13 @@ class App extends React.Component {
               ) : items}
             </div>
           )}
+          renderWrapper={(wrapperStyles, wrapperProps, renderedInput, renderedMenu, renderedDebugInfo) => (
+            <span style = {{ ...wrapperStyles }} {...wrapperProps}>
+              Enter value here: {renderedInput}
+              {renderedMenu}
+              {renderedDebugInfo}
+            </span>
+          )}
           isItemSelectable={(item) => !item.header}
         />
       </div>

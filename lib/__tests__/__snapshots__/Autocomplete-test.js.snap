@@ -42,3 +42,28 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
   </div>
 </div>
 `;
+
+exports[`Autocomplete.props.renderWrapper should be invoked in \`render\` to render the root element 1`] = `
+Object {
+  "display": "inline-block",
+}
+`;
+
+exports[`Autocomplete.props.renderWrapper should be invoked in \`render\` to render the root element 2`] = `Object {}`;
+
+exports[`Autocomplete.props.renderWrapper should be invoked in \`render\` to render the root element 3`] = `
+<span>
+  <input
+    aria-autocomplete="list"
+    aria-expanded={false}
+    autoComplete="off"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="combobox"
+    value="pants"
+  />
+</span>
+`;

@@ -3,6 +3,8 @@ We try to follow [http://keepachangelog.com/](http://keepachangelog.com/) recomm
 
 ## [Unreleased]
 _(add items here for easier creation of next log entry)_
+### Added
+- `props.renderWrapper` which allows a custom rendering function for the wrapper element of input and menu
 
 ## [1.8.1] - 2018-02-11
 ### Fixed
