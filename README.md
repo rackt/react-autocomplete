@@ -3,7 +3,7 @@
 Accessible, extensible, Autocomplete for React.js.
 
 ```jsx
-<Autocomplete
+<ReactAutocomplete
   getItemValue={(item) => item.label}
   items={[
     { label: 'apple' },
