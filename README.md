@@ -173,6 +173,12 @@ Default value: `false`
 Whether or not to automatically select the highlighted item when the
 `<input>` loses focus.
 
+#### `selectOnTab: Boolean` (optional)
+Default value: `false`
+
+Whether or not to select the highlighted item when the
+Tab key is pressed (same as existing Enter or Click behavior).
+
 #### `shouldItemRender: Function` (optional)
 Arguments: `item: Any, value: String`
 
