@@ -1,5 +1,5 @@
 {
-  "name": "react-autocomplete",
+  "name": "@entelo/react-autocomplete",
   "version": "1.8.1",
   "description": "Accessible, extensible, Autocomplete for React.js",
   "main": "./build/lib/Autocomplete.js",
