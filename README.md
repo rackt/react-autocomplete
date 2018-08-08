@@ -167,6 +167,24 @@ and keyboard navigation logic will break. `styles` will contain
 { top, left, minWidth } which are the coordinates of the top-left corner
 and the width of the dropdown menu.
 
+#### `renderMenuWrapper: Function` (optional)
+Default value:
+```jsx
+function(menu) {
+  return menu;
+}
+```
+
+Arguments: `menu: React element`
+
+Invoked to generate a wrapper around the menu component. Use this if you
+want to create a React Portal around the menu, e.g.:
+```jsx
+function(menu) {
+  return createPortal(menu, document.body);
+}
+```
+
 #### `selectOnBlur: Boolean` (optional)
 Default value: `false`
 
