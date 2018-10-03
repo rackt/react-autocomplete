@@ -1,6 +1,9 @@
 # React Autocomplete [![Travis build status](https://travis-ci.org/reactjs/react-autocomplete.svg?branch=master)](https://travis-ci.org/reactjs/react-autocomplete/)
 
 Accessible, extensible, Autocomplete for React.js.
+```javascript
+import Autocomplete from 'react-autocomplete'
+```
 
 ```jsx
 <Autocomplete
@@ -10,6 +13,7 @@ Accessible, extensible, Autocomplete for React.js.
     { label: 'banana' },
     { label: 'pear' }
   ]}
+  shouldItemRender={(item, value) => item.label.includes(value)}
   renderItem={(item, isHighlighted) =>
     <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
       {item.label}
