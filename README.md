@@ -1,5 +1,7 @@
 # React Autocomplete [![Travis build status](https://travis-ci.org/reactjs/react-autocomplete.svg?branch=master)](https://travis-ci.org/reactjs/react-autocomplete/)
 
+![Live Demo](https://media.giphy.com/media/ipE93btBwVQjleEQKu/giphy.gif)
+
 Accessible, extensible, Autocomplete for React.js.
 
 ```jsx
