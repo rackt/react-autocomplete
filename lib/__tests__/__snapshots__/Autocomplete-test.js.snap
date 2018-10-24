@@ -11,7 +11,6 @@ Object {
   "onFocus": [Function],
   "onKeyDown": [Function],
   "ref": [Function],
-  "role": "textbox",
   "value": "pants",
 }
 `;
@@ -36,7 +35,6 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
       onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      role="textbox"
       value="pants"
     />
   </div>
