@@ -71,7 +71,7 @@ menu.
 #### `clearButtonStyle: Object` (optional)
 Default value: `{}`
 
-Invoked when the clear button is pushed
+Whether to add style to the icon. It can override the existing style.
 
 #### `inputProps: Object` (optional)
 Default value: `{}`
@@ -87,10 +87,9 @@ placeholder, event handlers (onFocus, onBlur, etc.), autoFocus, etc..
 #### `isClearable: Boolean` (optional)
 Default value: `false`
 
-Used to override the internal logic which displays/hides the dropdown
-menu. This is useful if you want to force a certain state based on your
-UX/business logic. Use it together with `onMenuVisibilityChange` for
-fine-grained control over the dropdown menu dynamics.
+Used to render a clear button on the `<input>`
+Note: On default, it has no functionality.
+You should define 'onClear' prop as a func.
 
 #### `isItemSelectable: Function` (optional)
 Default value: `function() { return true }`
@@ -130,9 +129,7 @@ Invoked every time the user changes the input's value.
 #### `onClear: Function` (optional)
 Default value: `function() {}`
 
-Used to render a clear button on the `<input>`
-Note: On default, it has no functionality.
-You should define 'onClear' prop as a func.
+Invoked when the clear button is pushed
 
 #### `onMenuVisibilityChange: Function` (optional)
 Default value: `function() {}`
@@ -150,7 +147,6 @@ Arguments: `value: String, item: Any`
 Invoked when the user selects an item from the dropdown menu.
 
 #### `open: Boolean` (optional)
-Whether to add style to the icon. It can override the existing style.
 
 #### `renderInput: Function` (optional)
 Default value:
