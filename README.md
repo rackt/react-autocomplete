@@ -68,6 +68,11 @@ Default value: `true`
 Whether or not to automatically highlight the top match in the dropdown
 menu.
 
+#### `clearButtonStyle: Object` (optional)
+Default value: `{}`
+
+Invoked when the clear button is pushed
+
 #### `inputProps: Object` (optional)
 Default value: `{}`
 
@@ -78,6 +83,14 @@ supported by `HTMLInputElement` can be specified, apart from the
 following which are set by `Autocomplete`: value, autoComplete, role,
 aria-autocomplete. `inputProps` is commonly used for (but not limited to)
 placeholder, event handlers (onFocus, onBlur, etc.), autoFocus, etc..
+
+#### `isClearable: Boolean` (optional)
+Default value: `false`
+
+Used to override the internal logic which displays/hides the dropdown
+menu. This is useful if you want to force a certain state based on your
+UX/business logic. Use it together with `onMenuVisibilityChange` for
+fine-grained control over the dropdown menu dynamics.
 
 #### `isItemSelectable: Function` (optional)
 Default value: `function() { return true }`
@@ -114,6 +127,13 @@ Arguments: `event: Event, value: String`
 
 Invoked every time the user changes the input's value.
 
+#### `onClear: Function` (optional)
+Default value: `function() {}`
+
+Used to render a clear button on the `<input>`
+Note: On default, it has no functionality.
+You should define 'onClear' prop as a func.
+
 #### `onMenuVisibilityChange: Function` (optional)
 Default value: `function() {}`
 
@@ -130,10 +150,7 @@ Arguments: `value: String, item: Any`
 Invoked when the user selects an item from the dropdown menu.
 
 #### `open: Boolean` (optional)
-Used to override the internal logic which displays/hides the dropdown
-menu. This is useful if you want to force a certain state based on your
-UX/business logic. Use it together with `onMenuVisibilityChange` for
-fine-grained control over the dropdown menu dynamics.
+Whether to add style to the icon. It can override the existing style.
 
 #### `renderInput: Function` (optional)
 Default value:
@@ -200,29 +217,14 @@ dropdown menu elements rendered by `Autocomplete`.
 Default value:
 ```jsx
 {
-  display: 'inline-block'
+  display: 'inline-block',
+  position: 'relative',
 }
 ```
 
 This is a shorthand for `wrapperProps={{ style: <your styles> }}`.
 Note that `wrapperStyle` is applied before `wrapperProps`, so the latter
 will win if it contains a `style` entry.
-
-#### `isClearable: Boolean` (optional)
-Default value: `false`
-
-Used to render a clear button on the `<input>`
-Note: On default, it has no functionality. You should define 'onClear' prop as a func.
-
-#### `onClear: Function` (optional)
-Default value: `function() {}`
-
-Invoked when the clear button is pushed.
-
-#### `clearButtonStyle: Object` (optional)
-Default value: `{}`
-
-Whether to add style to the icon. It can override the existing style.
 
 
 ### Imperative API
