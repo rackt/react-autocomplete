@@ -73,6 +73,9 @@
   ],
   "keywords": [],
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.6",
+    "@fortawesome/free-solid-svg-icons": "^5.4.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
     "dom-scroll-into-view": "1.0.1",
     "prop-types": "^15.5.10"
   },

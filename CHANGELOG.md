@@ -4,6 +4,13 @@ We try to follow [http://keepachangelog.com/](http://keepachangelog.com/) recomm
 ## [Unreleased]
 _(add items here for easier creation of next log entry)_
 
+## [1.8.2] - 2018-10-25
+### Added
+- `props.isClearable` which renders a clear icon that acts as a button. When clicked, it invokes `props.onClear`.
+- `props.clearButtonStyle` which allows to add style to the clear gicon button.
+- Included `@fortawesome/fontawesome-svg-core`, `@fortawesome/free-solid-svg-icons` and `@fortawesome/react-fontawesome` in the dependencies.
+
+
 ## [1.8.1] - 2018-02-11
 ### Fixed
 - Prevent menu from closing prematurely on mobile (#308)

@@ -54,9 +54,12 @@ class App extends Component {
               {children}
             </div>
           }
-          wrapperStyle={{ position: 'relative', display: 'inline-block' }}
+          wrapperStyle={ { position: 'relative', display: 'inline-block' } }
           onMenuVisibilityChange={isOpen => this.setState({ isOpen })}
           open={open}
+          isClearable={true}
+          onClear={() => this.setState({ value:'' })}
+          clearButtonStyle={{ color:'blue' }}
         />
         <button
           onClick={() => this.setState({ isOpen: !state.isOpen })}

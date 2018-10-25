@@ -35,6 +35,9 @@ class App extends React.Component {
               key={item.abbr}
             >{item.name}</div>
           )}
+          isClearable={true}
+          onClear={() => this.setState({ value:'' })}
+          clearButtonStyle={{ color:'blue' }}
         />
       </div>
     )

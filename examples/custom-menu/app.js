@@ -60,7 +60,10 @@ class App extends React.Component {
               ) : items}
             </div>
           )}
-          isItemSelectable={(item) => !item.header}
+          isItemSelectable={ (item) => !item.header }
+          isClearable={true}
+          onClear={() => this.setState({ value:'' })}
+          clearButtonStyle={{ color:'blue' }}
         />
       </div>
     )

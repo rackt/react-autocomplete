@@ -208,6 +208,21 @@ This is a shorthand for `wrapperProps={{ style: <your styles> }}`.
 Note that `wrapperStyle` is applied before `wrapperProps`, so the latter
 will win if it contains a `style` entry.
 
+#### `isClearable: Boolean` (optional)
+Default value: `false`
+
+Used to render a clear button on the `<input>`
+Note: On default, it has no functionality. You should define 'onClear' prop as a func.
+
+#### `onClear: Function` (optional)
+Default value: `function() {}`
+
+Invoked when the clear button is pushed.
+
+#### `clearButtonStyle: Object` (optional)
+Default value: `{}`
+
+Whether to add style to the icon. It can override the existing style.
 
 ### Imperative API
 
