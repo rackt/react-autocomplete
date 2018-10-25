@@ -224,6 +224,7 @@ Default value: `{}`
 
 Whether to add style to the icon. It can override the existing style.
 
+
 ### Imperative API
 
 In addition to the props there is an API available on the mounted element which is similar to that of `HTMLInputElement`. In other words: you can access most of the common `<input>` methods directly on an `Autocomplete` instance. An example:
