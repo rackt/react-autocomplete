@@ -25,12 +25,13 @@ class App extends React.Component {
           onChange={(event, value) => this.setState({ value })}
           onSelect={value => this.setState({ value })}
           renderMenu={children => (
-            <div className="menu">
+            <div role="listbox" className="menu">
               {children}
             </div>
           )}
           renderItem={(item, isHighlighted) => (
             <div
+              role="option"
               className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
               key={item.abbr}
             >{item.name}</div>
