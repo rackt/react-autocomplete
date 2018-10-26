@@ -43,6 +43,7 @@ class App extends Component {
           onChange={e => this.setState({ value: e.target.value })}
           renderItem={(item, isHighlighted) => (
             <div
+              role="option"
               className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
               key={item.abbr}
             >
@@ -50,7 +51,7 @@ class App extends Component {
             </div>
           )}
           renderMenu={children =>
-            <div className="menu">
+            <div role="listbox" className="menu">
               {children}
             </div>
           }

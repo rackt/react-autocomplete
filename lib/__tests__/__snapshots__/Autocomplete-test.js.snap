@@ -3,7 +3,6 @@
 exports[`Autocomplete.props.renderInput should be invoked in \`render\` to create the <input> element 1`] = `
 Object {
   "aria-autocomplete": "list",
-  "aria-expanded": false,
   "autoComplete": "off",
   "foo": "bar",
   "onBlur": [Function],
@@ -12,13 +11,14 @@ Object {
   "onFocus": [Function],
   "onKeyDown": [Function],
   "ref": [Function],
-  "role": "combobox",
   "value": "pants",
 }
 `;
 
 exports[`Autocomplete.props.renderInput should be invoked in \`render\` to create the <input> element 2`] = `
 <div
+  aria-expanded={false}
+  role="combobox"
   style={
     Object {
       "display": "inline-block",
@@ -28,7 +28,6 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
   <div>
     <input
       aria-autocomplete="list"
-      aria-expanded={false}
       autoComplete="on"
       foo="bar"
       onBlur={[Function]}
@@ -36,7 +35,6 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
       onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      role="combobox"
       value="pants"
     />
   </div>

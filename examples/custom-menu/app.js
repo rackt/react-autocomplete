@@ -45,14 +45,15 @@ class App extends React.Component {
                 key={item.header}
               >{item.header}</div>
               : <div
+                role="option"
                 className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
                 key={item.abbr}
               >{item.name}</div>
           )}
           renderMenu={(items, value) => (
-            <div className="menu">
+            <div role="listbox" className="menu">
               {value === '' ? (
-                <div className="item">Type of the name of a United State</div>
+                <div className="item">Type the name of a United State</div>
               ) : this.state.loading ? (
                 <div className="item">Loading...</div>
               ) : items.length === 0 ? (

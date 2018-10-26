@@ -194,7 +194,8 @@ The value to display in the input field
 Default value: `{}`
 
 Props that are applied to the element which wraps the `<input />` and
-dropdown menu elements rendered by `Autocomplete`.
+dropdown menu elements rendered by `Autocomplete`. This is in addition to
+the following properties set by `Autocomplete`: role, aria-expanded.
 
 #### `wrapperStyle: Object` (optional)
 Default value:
