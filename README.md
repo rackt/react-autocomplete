@@ -190,6 +190,13 @@ Default value: `''`
 
 The value to display in the input field
 
+#### `wrapper: Boolean` (optional)
+Default value: `true`
+
+Whether or not to wrap the input and menu items in a `<div>` tag. Setting
+this to `false` will render without a wrapper, discarding any overrides from
+`wrapperProps` and `wrapperStyle`.
+
 #### `wrapperProps: Object` (optional)
 Default value: `{}`
 
