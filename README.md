@@ -127,7 +127,7 @@ Default value: `function() {}`
 
 Arguments: `value: String, item: Any`
 
-Invoked when the user selects an item from the dropdown menu.
+Invoked when the user selects an item from the dropdown menu. `value` contains the selected value as returned by `getItemValue`, while `item` is the original element of the items array.
 
 #### `open: Boolean` (optional)
 Used to override the internal logic which displays/hides the dropdown
