@@ -75,7 +75,7 @@ Props passed to `props.renderInput`. By default these props will be
 applied to the `<input />` element rendered by `Autocomplete`, unless you
 have specified a custom value for `props.renderInput`. Any properties
 supported by `HTMLInputElement` can be specified, apart from the
-following which are set by `Autocomplete`: value, autoComplete, role,
+following which are set by `Autocomplete`: value, role,
 aria-autocomplete. `inputProps` is commonly used for (but not limited to)
 placeholder, event handlers (onFocus, onBlur, etc.), autoFocus, etc..
 

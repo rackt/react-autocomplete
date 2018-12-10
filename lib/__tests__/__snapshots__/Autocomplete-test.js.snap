@@ -4,7 +4,7 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
 Object {
   "aria-autocomplete": "list",
   "aria-expanded": false,
-  "autoComplete": "off",
+  "autoComplete": "new-password",
   "foo": "bar",
   "onBlur": [Function],
   "onChange": [Function],
