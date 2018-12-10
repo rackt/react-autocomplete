@@ -4,6 +4,7 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
 Object {
   "aria-autocomplete": "list",
   "aria-expanded": false,
+  "aria-label": "autocomplete",
   "autoComplete": "off",
   "foo": "bar",
   "onBlur": [Function],
@@ -29,6 +30,7 @@ exports[`Autocomplete.props.renderInput should be invoked in \`render\` to creat
     <input
       aria-autocomplete="list"
       aria-expanded={false}
+      aria-label="autocomplete"
       autoComplete="on"
       foo="bar"
       onBlur={[Function]}
