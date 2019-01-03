@@ -4,20 +4,23 @@ Accessible, extensible, Autocomplete for React.js.
 
 ```jsx
 <Autocomplete
-  getItemValue={(item) => item.label}
+  getItemValue={(item) => item.id}
   items={[
-    { label: 'apple' },
-    { label: 'banana' },
-    { label: 'pear' }
+    { id: 'apple', label: 'apple' },
+    { id: 'banana', label: 'banana' },
+    { id: 'pear', label: 'pear' }
   ]}
   renderItem={(item, isHighlighted) =>
-    <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+    <div
+      key={item.id}
+      style={{ background: isHighlighted ? 'lightgray' : 'white'}}
+    >
       {item.label}
     </div>
   }
-  value={value}
-  onChange={(e) => value = e.target.value}
-  onSelect={(val) => value = val}
+  value={this.state.value}
+  onChange={e => this.setState({ value: e.target.value })}
+  onSelect={value => this.setState({ value })}
 />
 ```
 
