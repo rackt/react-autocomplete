@@ -68,6 +68,12 @@ Default value: `true`
 Whether or not to automatically highlight the top match in the dropdown
 menu.
 
+#### `autoHighlightValueMatches: Function` (optional)
+Default value: `(itemValue, value) => (itemValue.toLowerCase().indexOf(value.toLowerCase()) === 0)`
+
+When `autoHighlight` is true, this is invoked to determine whether the top item
+in the dropdown menu should be considered a match.
+
 #### `inputProps: Object` (optional)
 Default value: `{}`
 
