@@ -28,7 +28,8 @@
     "test:lint": "scripty",
     "test:jest": "scripty",
     "coverage": "scripty",
-    "start": "SCRIPTY_PARALLEL=true scripty"
+    "start": "SCRIPTY_PARALLEL=true scripty",
+    "prepare": "npm run build"
   },
   "authors": [
     "Ryan Florence <rpflorence@gmail.com>"
