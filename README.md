@@ -10,6 +10,7 @@ Accessible, extensible, Autocomplete for React.js.
     { label: 'banana' },
     { label: 'pear' }
   ]}
+  shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}
   renderItem={(item, isHighlighted) =>
     <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
       {item.label}
